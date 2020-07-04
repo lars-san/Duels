@@ -1,0 +1,316 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Warhammer 40,000 Duels</title>
+<!--<link rel="stylesheet" type="text/css" href="normal.css">-->
+<link rel="stylesheet" type="text/css" href="duel.css">
+<style>
+.top-leftCorner { grid-area: left; }
+.vsSymbol { grid-area: main; }
+.top-rightCorner { grid-area: right; }
+.logo {	grid-area: bottom; }
+
+.grid-header {
+  display: grid;
+  grid-template-columns: auto 300px auto;
+  grid-template-areas:
+    'left main right'
+    'left main right'
+    'left bottom right';
+  gap: 0px;
+  background-color: rgba(255,255,255);
+  padding: 0px;
+  align-items: end;
+}
+
+.redhead {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	height: 300px;
+}
+
+.bluehead {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	height: 300px;
+}
+
+.red {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 160px;
+}
+
+.blue {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 160px;
+}
+
+.grid-header > div {
+  background-color: rgba(255,255,255);
+  padding: 0px 0px;
+}
+
+.right1 { grid-area: r1; }
+.right2 { grid-area: r2; }
+.right3 { grid-area: r3; }
+.right4 { grid-area: r4; }
+.right5 { grid-area: r5; }
+.right6 { grid-area: r6; }
+.right7 { grid-area: r7; }
+.right8 { grid-area: r8; }
+.right9 { grid-area: r9; }
+.right10 { grid-area: r10; }
+.right11 { grid-area: r11; }
+.right12 { grid-area: r12; }
+.middle1 { grid-area: m1; }
+.middle2 { grid-area: m2; }
+.middle3 { grid-area: m3; }
+.middle4 { grid-area: m4; }
+.middle5 { grid-area: m5; }
+.middle6 { grid-area: m6; }
+.middle7 { grid-area: m7; }
+.middle8 { grid-area: m8; }
+.middle9 { grid-area: m9; }
+.middle10 { grid-area: m10; }
+.middle11 { grid-area: m11; }
+.middle12 { grid-area: m12; }
+.left1 { grid-area: l1; }
+.left2 { grid-area: l2; }
+.left3 { grid-area: l3; }
+.left4 { grid-area: l4; }
+.left5 { grid-area: l5; }
+.left6 { grid-area: l6; }
+.left7 { grid-area: l7; }
+.left8 { grid-area: l8; }
+.left9 { grid-area: l9; }
+.left10 { grid-area: l10; }
+.left11 { grid-area: l11; }
+.left12 { grid-area: l12; }
+
+.grid-content {
+  display: grid;
+  grid-template-columns: auto 300px auto;
+  grid-template-areas:
+	'l1 m1 r1'
+    'l2 m2 r2'
+    'l3 m3 r3'
+	'l4 m4 r4'
+	'l5 m5 r5'
+    'l6 m6 r6'
+    'l7 m7 r7'
+	'l8 m8 r8'
+    'l9 m9 r9'
+    'l10 m10 r10'
+    'l11 m11 r11'
+	'l12 m12 r12';
+  gap: 0px;
+  background-color: rgba(255,255,255);
+  padding: 0px;
+  align-items: end;
+}
+
+.grid-content > div {
+  height: 160px;
+  padding: 0px 0px;
+}
+
+.lregd1 { grid-area: lrd1; }
+.lregd2 { grid-area: lrd2; }
+.lregd3 { grid-area: lrd3; }
+.lregd4 { grid-area: lrd4; }
+.lregd5 { grid-area: lrd5; }
+.lregd6 { grid-area: lrd6; }
+.lregd7 { grid-area: lrd7; }
+.lregd8 { grid-area: lrd8; }
+.lregd9 { grid-area: lrd9; }
+.lregd10 { grid-area: lrd10; }
+.lregd11 { grid-area: lrd11; }
+.lregd12 { grid-area: lrd12; }
+
+.grid-lregdice {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    'lrd9 lrd5 lrd1'
+    'lrd10 lrd6 lrd2'
+    'lrd11 lrd7 lrd3'
+	'lrd12 lrd8 lrd4';
+  gap: 0px;
+  background-color: rgba(255,255,255);
+  padding: 0px;
+  align-items: end;
+}
+
+.grid-lregdice > div {
+	height: 30px;
+	width: 30px;
+	padding: 0px 0px;
+}
+
+.rregd1 { grid-area: rrd1; }
+.rregd2 { grid-area: rrd2; }
+.rregd3 { grid-area: rrd3; }
+.rregd4 { grid-area: rrd4; }
+.rregd5 { grid-area: rrd5; }
+.rregd6 { grid-area: rrd6; }
+.rregd7 { grid-area: rrd7; }
+.rregd8 { grid-area: rrd8; }
+.rregd9 { grid-area: rrd9; }
+.rregd10 { grid-area: rrd10; }
+.rregd11 { grid-area: rrd11; }
+.rregd12 { grid-area: rrd12; }
+
+.grid-rregdice {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-areas:
+	'rrd1 rrd5 rrd9'
+	'rrd2 rrd6 rrd10'
+	'rrd3 rrd7 rrd11'
+	'rrd4 rrd8 rrd12';
+	gap: 0px;
+	padding: 0px 0px;
+	align-items: end;
+}
+
+.grid-rregdice > div {
+	height: 30px;
+	width: 30px;
+	padding: 0px 0px;
+}
+
+.reroll {
+	z-index: 1;
+	float: right;
+	height: 30px;
+	width: 10px;
+	padding: 0px 0px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+</style>
+</head>
+<body>
+<!-- <h1>Duels</h1><div id="content">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>"Who would win in a duel?"</b> That is a question we have asked ourselves time and time again.<br /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Rules of Engagement:</b> The rules used for the duel are:<br />
+ - Character statistics are from Warhammer 40,000 9th Edition<br />
+ - Warhammer 40,000's 9th Edition rules are used with minor modifications (see below)<br />
+ - Characters start 24" apart in round 1<br />
+ - Characters start 12" apart in round 2<br />
+ - Characters start in base contact in round 3<br />
+ - The character that gets the first turn is randomly determined each round<br />
+ - The battlefield is 2' x 2', flat, and has no terrain of significance<br />
+<br /> -->
+<center>
+<div id="header">
+
+<div class="grid-header">
+  <div class="top-leftCorner"><div class="redhead"><img src="abaddon.png" width="250" /></div></div>
+  <div class="top-rightCorner"><div class="bluehead"><img src="roboute.png" width="250" /></div></div>
+  <div class="vsSymbol"><img src="vs.png" width="100" /></div>  
+  <div class="logo"><img src="40k_logo.png" width="150"/></div>
+</div>
+<!--<table height = "300" width = "800">
+<tr>
+<td align = "right" valign = "bottom" class="vsBackground"><img src="abaddon.png" width="250" /></td>
+<td align = "center" width = "300"><table><tr height = "80"><td></td></tr><tr valign = "center" height = "100"><td align = "center"><img src="vs.png" width="100" /></td></tr><tr valign = "bottom" align = "center" height = "100"><td><img src="40k_logo.png" align="bottom" width="150"/></td></tr></table></td>
+<td align = "left" valign = "bottom" class="vsBackground"><img src="roboute.png" width="250" /></td>
+</tr>
+</table>-->
+</div>
+</center>
+
+<div id="content">
+<center>
+	<div class="grid-content">
+		<div class="left1"><div class="red"><img src="dice-3.png" width="80" /></div></div>
+		<div class="left2"></div>
+		<div class="left3"><div class="red"><table><tr><td><center>Save</center></td></tr><tr><td><div class="grid-lregdice">
+			<div class="lregd1"><img src="dice-5.png" width="30" /></div>
+			<div class="lregd2"><img src="dice-5.png" width="30" /></div>
+			<div class="lregd3"><img src="dice-5.png" width="30" /></div>
+			<div class="lregd4"><img src="dice-1.png" width="30" /></div>
+		</div></td></tr></table></div></div>
+		<div class="left4"></div>
+		<div class="left5"></div>
+		<div class="left6"></div>
+		<div class="left7"></div>
+		<div class="left8"><div class="red"><table><tr><td><center>Daemon Weapon</center></td><td>&nbsp;</td><td><center>Hit</center></td><td>&nbsp;</td><td><center>Wound</center></td></tr>
+			<tr><td><center><img src="dice-5.png" width="80" /></center></td><td></td><td><div class="grid-lregdice">
+			<div class="lregd1"><img src="dice-6.png" width="30" /></div>
+			<div class="lregd2"><img src="dice-5.png" width="30" /></div>
+			<div class="lregd3"><img src="dice-5.png" width="30" /></div>
+			<div class="lregd4"><img src="dice-5.png" width="30" /></div>
+			<div class="lregd5"><img src="dice-4.png" width="30" /></div>
+			<div class="lregd6"><img src="dice-4.png" width="30" /></div>
+			<div class="lregd7"><img src="dice-3.png" width="30" /></div>
+			<div class="lregd8"><img src="dice-3.png" width="30" /></div>
+			<div class="lregd9"><img src="dice-3.png" width="30" /></div>
+			<div class="lregd10"><img src="dice-2.png" width="30" /></div>
+			<div class="lregd11"><img src="dice-2.png" width="30" /></div>
+		</div></td><td></td><td><div class="grid-lregdice">
+			<div class="lregd1"><img src="dice-6.png" width="30" /></div>
+			<div class="lregd2"><img src="dice-6.png" width="30" /></div>
+			<div class="lregd3"><img src="dice-6.png" width="30" /></div>
+			<div class="lregd4"><img src="dice-5.png" width="30" /></div>
+			<div class="lregd5"><img src="dice-4.png" width="30" /></div>
+			<div class="lregd6"><img src="dice-4.png" width="30" /></div>
+			<div class="lregd7"><img src="dice-4.png" width="30" /></div>
+			<div class="lregd8"><img src="dice-2.png" width="30" /></div>
+			<div class="lregd9"><img src="dice-1.png" width="30" /></div>
+			<div class="lregd10"><img src="dice-1.png" width="30" /></div>
+			<div class="lregd11"><img src="dice-1.png" width="30" /></div>
+		</div></td></tr></table></div></div>
+		<div class="left9"></div>
+		<div class="left10"></div>
+		<div class="middle1"><div class="roll-off"><div><b>Roboute goes first!</b></div></div></div>
+		<div class="middle2"><div class="move-left"><b>6" move</b> 6" away</div></div>
+		<div class="middle3"><div class="shoot-left">1* wound</div></div>
+		<div class="middle4"><div class="charge-left">3"+1" charge fails</div></div>
+		<div class="middle5"><div class="move-right"><b>6" move</b> 1" away</div></div>
+		<div class="middle6"><div class="shoot-right">3 wounds</div></div>
+		<div class="middle7"><div class="charge-right">5" charge succeeds</div></div>
+		<div class="middle8"><div class="attack-right">6 wounds</div></div>
+		<div class="middle9"><div class="middle-text">Armour of Fate Fails!</div></div>
+		<div class="middle10"><div class="middle-text"><h1>Abaddon Wins!</h1></div></div>
+		<div class="right1"><div class="blue"><img src="dice-4.png" width="80" /></div></div>
+		<div class="right2"><div class="blue"></div></div>
+		<div class="right3"><div class="blue"><table><tr><td><center>Wound</center></td><td>&nbsp;</td><td><center>Hit</center></td</tr><tr><td><div class="grid-rregdice">
+			<div class="rregd1"><img src="dice-6.png" width="30" /></div>
+			<div class="rregd2"><img src="dice-6.png" width="30" /></div>
+			<div class="rregd3"><img src="dice-5.png" width="30" /></div>
+			<div class="rregd4"><img src="dice-5.png" width="30" /></div>
+			<div class="rregd5"><img src="dice-3.png" width="30" /></div>
+			<div class="rregd6"><img src="dice-1.png" width="30" /></div>
+			<div class="rregd6"><div class="reroll"><img src="dice-2.png" width="10" /></div></div>
+		</div></td><td></td><td><div class="grid-rregdice">
+			<div class="rregd1"><img src="dice-6.png" width="30" /></div>
+			<div class="rregd2"><img src="dice-6.png" width="30" /></div>
+			<div class="rregd3"><img src="dice-4.png" width="30" /></div>
+			<div class="rregd4"><img src="dice-3.png" width="30" /></div>
+			<div class="rregd5"><img src="dice-3.png" width="30" /></div>
+			<div class="rregd6"><img src="dice-2.png" width="30" /></div>
+		</div></td></tr></table></div></div>
+		<div class="right4"><div class="blue"><img src="dice-1.png" width="80" /><br /><img src="dice-2.png" width="80" /></div></div>
+		<div class="right8"><div class="blue"><table><tr><td><center>Save</center></td></tr><tr><td><div class="grid-rregdice">
+			<div class="rregd1"><img src="dice-6.png" width="30" /></div>
+			<div class="rregd2"><img src="dice-4.png" width="30" /></div>
+			<div class="rregd3"><img src="dice-4.png" width="30" /></div>
+			<div class="rregd4"><img src="dice-3.png" width="30" /></div>
+			<div class="rregd5"><img src="dice-2.png" width="30" /></div>
+			<div class="rregd6"><img src="dice-1.png" width="30" /></div>
+		</div></td></tr></table></div></div>
+		<div class="right9"><div class="blue"><img src="dice-2.png" width="80" /></div></div>
+	</div>
+</center>
+</div>
+</body>
+</html>
